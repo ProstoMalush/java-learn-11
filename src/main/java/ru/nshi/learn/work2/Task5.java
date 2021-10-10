@@ -7,41 +7,41 @@ public class Task5 {
         Task3 task3 = new Task3();
         Task1 task1 = new Task1();
 
-        int[] array = task1.createArray(5);
+        int[] array = task1.createArray(10);
         task1.fillArrayByRandom(array);
         task1.printArray(array);
-        task4.IndexMin1(array);
-        task4.IndexMax1(array);
+        task4.IndexMin(array);
+        task4.IndexMax(array);
 
-        System.out.println("\nМаксимальное значение массива = " + task3.maxValue(array));
-        System.out.println("Минимальное значение массива = " + task3.minValue(array));
-        System.out.println("индекс максимального значения массива = " + task4.IndexMax1(array));
-        System.out.println("индекс минимального значения массива = " + task4.IndexMin1(array));
+        System.out.println();
+        System.out.println("\nнайдем среднее значение между числами ( " + task3.maxValue(array) + " и " + task3.minValue(array) + ")");
+        System.out.println();
+
         float Average = task5.Average(array);
-        if (Average != 0);
+        if (Average != 0)
             System.out.println("среднее значение = " + Average);
     }
 
     public float Average(int[] array) {
         Task4 task4 = new Task4();
-        int min1 = task4.IndexMin1(array);
-        int max1 = task4.IndexMax1(array);
-        int summa = 0;
+        int Imin = task4.IndexMin(array);
+        int Imax = task4.IndexMax(array);
+        int Sum = 0;
         int k = 0;
         float Sr = 0;
-        if (min1 < max1){
-            for (int i = min1+1; i < max1; i++) {
-                summa += array[i];
+        if (Imin < Imax){
+            for (int i = Imin+1; i < Imax; i++) {
+                Sum += array[i];
                 k += 1;
             }
-        } else if (max1 < min1){
-            for (int i = max1 +1 ; i < min1 ; i++) {
-                summa += array[i];
+        } else if (Imax < Imin){
+            for (int i = Imax +1 ; i < Imin ; i++) {
+                Sum += array[i];
                 k += 1;
             }
         }
         if (k != 0) {
-            Sr = summa/k;
+            Sr = Sum / k;
         } else System.out.println("\nнет элеметов между ними");
         return Sr;
     }
