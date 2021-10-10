@@ -5,6 +5,7 @@ public class Task3 {
     public static void main(String[] args){
         Task3 task3 = new Task3();
         Task1 task1 = new Task1();
+        Task2 task2 = new Task2();
 
         int[] array = task1.createArray(10);
         task1.fillArrayByRandom(array);
@@ -15,7 +16,7 @@ public class Task3 {
     }
     public int maxValue(int[] array) {
         int max = array[0];
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 1; i < array.length; i++) {
             if (max < array[i]){
                 max = array[i];
             }
