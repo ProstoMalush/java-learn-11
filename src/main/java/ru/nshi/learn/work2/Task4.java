@@ -52,28 +52,19 @@ public class Task4 {
     }
 
     private void printArray4(int[] array) {
-
         Task4 task4 = new Task4();
-        Task3 task3 = new Task3();
         int Imin = task4.IndexMin(array);
         int Imax = task4.IndexMax(array);
-        int min = task3.minValue(array);
-        int max = task3.maxValue(array);
-
+        int temp = array[Imax];
+        array[Imax] = array[Imin];
+        array[Imin] = temp;
         for (int i = 0; i < array.length; i++) {
-            if (i == Imax){
-                System.out.print(min + ", ");
-            } else if (i == Imin){
-                System.out.print(max + ", ");
-            } else {
                 System.out.print(array[i]);
                 if (i + 1 < array.length) {
                     System.out.print(", ");
                 }
-            }
         }
     }
-
 }
 
 
