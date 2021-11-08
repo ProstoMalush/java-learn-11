@@ -1,6 +1,6 @@
 package ru.nshi.learn.work3;
 
-//ЗАДАНИЕ 3: Осуществить проверку двумерного массива на "магический квадрат".
+// Осуществить проверку двумерного массива на "магический квадрат".
 
 public class Task3 {
     public static void main(String[] args){
