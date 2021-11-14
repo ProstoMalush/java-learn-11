@@ -8,36 +8,43 @@ public class Task6 {
         Task6 task6 = new Task6();
         String[] strArray = task6.returnStringArray();
         String result = task6.maxUniqueSymbolsInString(strArray);
-        System.out.println("максимальное кол-во уникальных сиволов в данной строке : " + result);
+        System.out.println(result);
+
     }
 
     public String[] returnStringArray() {
         Scanner in = new Scanner(System.in);
         System.out.print("Введите длину массива: ");
         int arrayLength = in.nextInt();
+
         String[] strArray = new String[arrayLength];
         for (int i = 0; i < arrayLength; i++) {
-            System.out.printf("Заполните элемент массива №%d : ", i + 1);
+            System.out.printf("Заполните элемент массива №%d: ", i + 1);
             strArray[i] = in.next();
         }
         return strArray;
     }
 
+
     public String maxUniqueSymbolsInString(String[] str) {
         Task5 task5 = new Task5();
-        String readyStr = "";
+        String result = "";
+        String firstResult;
         String[] arrayUnique = new String[str.length];
+
         for (int i = 0; i < arrayUnique.length; i++) {
             arrayUnique[i] = task5.searchForUniqueSymbols(str[i]);
         }
 
         for (int i = 1; i < arrayUnique.length; i++) {
-            if (arrayUnique[i].length() > arrayUnique[i - 1].length()) {
-                readyStr = str[i];
-            } else {
-                readyStr = str[i - 1];
+            for (int j = 1; j < arrayUnique.length; j++) {
+                if (arrayUnique[i].length() > arrayUnique[j].length()) {
+                    firstResult = str[i];
+                } else firstResult = str[j];
+                if (firstResult.length() > result.length()) {
+                    result = firstResult;
+                }
             }
-        }
-        return readyStr;
+        } return result;
     }
 }
