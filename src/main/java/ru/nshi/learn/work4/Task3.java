@@ -12,7 +12,6 @@ public class Task3 {
         String str = "a1b23c4%&50";
         String readyStr = task3.creatingStringWithNumbers(str);
         System.out.println("string = "+readyStr);
-        char[] array = new char[str.length()];
         int[] arr = task3.creatingArrayWithNumbers(readyStr);
         task3.printArray(arr);
     }
