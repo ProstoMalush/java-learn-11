@@ -59,6 +59,7 @@ public class Task3 {
                 if (sumLines[i] != sumLines[i-1]) return false;
                 if (sumColumns[i] != sumColumns[i-1]) return false;
             }
+
         }else return false;
         return true;
     }
