@@ -42,9 +42,9 @@ public class Task1 {
     public static void printMatrix(int[][] array) {
         for (int[] ints : array) {
             for (int j = 0; j < ints.length; j++) {
-                System.out.print(ints[j] + " ");
+                System.out.printf("%4d" , ints[j]);
             }
-            System.out.println();
+            System.out.println("");
         }
     }
 
