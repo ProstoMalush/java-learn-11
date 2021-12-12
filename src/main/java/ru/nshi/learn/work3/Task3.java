@@ -16,7 +16,6 @@ public class Task3 {
         System.out.println("Сумма элементов побочной диагонали = " + task3.sumCollateralDiagonal(array));
         if(task3.magicMatrix(array)) System.out.println("квадрат магический");
         else System.out.println("квадрат не магический");
-
     }
 
     public int sumMainDiagonal (int[][] array){
@@ -54,13 +53,11 @@ public class Task3 {
         task2.sumColumnsArray(array);
 
         if (sumMain == sumCollateral) {
-            for (int i = 1; i < array.length; i++)
-            {
+            for (int i = 1; i < array.length; i++) {
                 if (sumLines[i] != sumLines[i-1]) return false;
                 if (sumColumns[i] != sumColumns[i-1]) return false;
             }
-
-        }else return false;
+        } else return false;
         return true;
     }
 }
